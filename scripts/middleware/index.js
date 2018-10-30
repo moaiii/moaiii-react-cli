@@ -28,7 +28,7 @@ const addMiddleware = ( middlewares) => {
       rl.output.write(line + '\n');
 
       middlewares.forEach( middleware => {
-        rl.output.write(`import ${middleware.name}Middleware from \'${middleware.path}\';`);
+        rl.output.write(`const ${middleware.name}Middleware = require(\'./${middleware.path}\');`);
         rl.output.write('\n');
       });
 

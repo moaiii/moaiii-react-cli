@@ -1,8 +1,9 @@
+#!/usr/bin/env node
+
 const chokidar = require('chokidar');
-const {exec} = require('child_process');
 const argv = require('yargs').argv;
-const { addMiddleware } = require('./middleware');
-const { addReducer } = require('./reducer');
+const { addMiddleware } = require('./scripts/middleware');
+const { addReducer } = require('./scripts/reducer');
 
 
 /**
@@ -145,3 +146,5 @@ var watcher = chokidar
   watcher
     .on('add', (path, stats) => _addFile(path, stats))
     .on('unlink', (path, stats) => _removeFile(path, stats));
+
+module.exports = watcher;

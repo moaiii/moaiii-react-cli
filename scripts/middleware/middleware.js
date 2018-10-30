@@ -1,21 +1,13 @@
 /** 1. Imports  */
-import xMiddleware from 'src/x.middleware.js';
-import zMiddleware from 'src/z.middleware.js';
-import bMiddleware from 'src/a/b/b.middleware.js';
-import tMiddleware from 'src/a/b/t.middleware.js';
-import laskdfldsfMiddleware from 'src/laskdfldsf.middleware.js';
+const aMiddleware = require('src/a.middleware.js');
 
 const middlewares = {
   /** 2. Combined middleware functions */
-  ...xMiddleware,
-  ...zMiddleware,
-  ...bMiddleware,
-  ...tMiddleware,
-  ...laskdfldsfMiddleware,
+  ...aMiddleware,
 
 };
 
-export default (store, next, action) => {
+module.exports = function(store, next, action) {
 
   let middleware = middlewares[action.type];
 
@@ -24,4 +16,4 @@ export default (store, next, action) => {
   }
 
   next(action);
-}
+};

@@ -1,7 +1,8 @@
-const middlware = require('./scripts/middleware.js');
-const store = require('./scripts/store.js');
+const middlware = require('./scripts/middleware/middleware.js');
+const combinedReducers = require('./scripts/reducer/combined-reducers.js');
+// const watch = require('./scripts/watch.js');
 
 module.exports = {
     middleware,
-    store
+    combinedReducers,
 }

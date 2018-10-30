@@ -10,7 +10,7 @@ const fs = require('fs');
  */
 const addReducer = ( reducers) => {
   const baseFile = 'base.txt';
-  const outputFile = 'store.js';
+  const outputFile = 'combined-reducers.js';
 
   const sections = {
     "import": "/** 1. Imports  */",
@@ -29,7 +29,7 @@ const addReducer = ( reducers) => {
       rl.output.write(line + '\n');
 
       reducers.forEach( reducer => {
-        rl.output.write(`import ${reducer.name}Reducer from \'${reducer.path}\';`);
+        rl.output.write(`const ${reducer.name}Reducer = require(\'./${reducer.path}\');`);
         rl.output.write('\n');
       });
 
