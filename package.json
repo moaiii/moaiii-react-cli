@@ -1,6 +1,6 @@
 {
-  "name": "react-middleware-reducer-cli-watcher",
-  "version": "1.0.0",
+  "name": "react-watch",
+  "version": "1.0.1",
   "description": "A CLI tool for react which auto imports components middleware and reducer files.",
   "main": "middleware-add.js",
   "scripts": {

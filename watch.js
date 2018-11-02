@@ -9,7 +9,7 @@ const { addReducer } = require('./scripts/reducer');
 /**
  * Globals
  */
-const SRC_FOLDER = argv.src;
+const SRC_FOLDER = argv.src || './src';
 let MIDDLEWARES = [];
 let REDUCERS = [];
 
